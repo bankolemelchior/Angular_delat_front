@@ -1,0 +1,28 @@
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Nom & Prénom</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Doe John">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">email</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Date de naissance</label>
+  <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="03-10-2000">
+</div>
+
+
+<h2>Student List</h2>
+@for (student of students; track student.id) {
+  <div class="card" style="width: 18rem;">
+    <img src="assets/attributes-of-the-student-free-png.png" class="card-img-top" alt="Photo de profil">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+}@empty {
+  <p>Auncune donnée</p>
+}
