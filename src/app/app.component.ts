@@ -62,7 +62,17 @@ export class AppComponent implements OnInit{
   // }
 
   deleteStudent(studentId: number) {
+    console.log("dans deleteStudent");
     
+    this.studentService.deleteStudent(studentId).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.log(error.message);
+      }
+    );
+    this.getStudents();
   }
 
 }

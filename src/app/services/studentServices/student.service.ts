@@ -32,6 +32,8 @@ export class StudentService {
   }
 
   public deleteStudent(studentId: number): Observable<Student> {
+    console.log('dans le service');
+    
     return this.http.delete<Student>(`${this.apiServerUrl}/api/delete/${studentId}`);
   }
 }

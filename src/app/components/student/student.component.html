@@ -114,8 +114,8 @@
             <i class="fa fa-envelope float-right"></i>Date de naissance :
             <a href="#">{{student.dob}}</a>
           </li>
-          <li class="action-btn">Supprimer</li>
-          <li class="action-btn">Modifier</li>
+          <button (click)="deleteS(student.id)" class="action-btn">Supprimer</button>
+          <button class="action-btn">Modifier</button>
         </ul>
       </div>
     </div>

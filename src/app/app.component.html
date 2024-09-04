@@ -228,7 +228,7 @@
       <h1>{{ title }}</h1>
 
       <app-student-form (newStudent)="addNewStudent($event)"></app-student-form>
-      <app-student [students]="students"></app-student>
+      <app-student [students]="students" (sendStudentId)="deleteStudent($event)"></app-student>
     </div>
     <!-- <div class="divider" role="separator" aria-label="Divider">
 
