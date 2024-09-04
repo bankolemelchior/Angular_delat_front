@@ -2,8 +2,8 @@
  * Structure d'un student
  */
 export interface Student {
-  id:Number
-  name:String
+  id?:number
+  name:string
   email:string
   dob:string
 }

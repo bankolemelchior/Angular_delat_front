@@ -1,0 +1,43 @@
+<form [formGroup]="studentForm" (ngSubmit)="addStudent()" class="form-container">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Nom & Prénom</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleFormControlInput1"
+      formControlName="name"
+      placeholder="Doe John"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleFormControlInput1"
+      formControlName="email"
+      placeholder="name@example.com"
+      required
+
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"
+      >Date de naissance</label
+    >
+    <input
+      type="date"
+      class="form-control"
+      id="exampleFormControlInput1"
+      formControlName="dob"
+      placeholder="03-10-2000"
+      required
+
+    />
+  </div>
+  <div>
+    <input type="submit" value="Ajouter">
+  </div>
+</form>
+
