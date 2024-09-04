@@ -4,63 +4,39 @@
 
 <div class="container">
   <div class="row">
-    <!-- <div class="col-md-6 col-xl-3">
-            <div class="card m-b-30">
-                <div class="card-body row">
-                    <div class="col-6">
-                        <a href=""><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" class="img-fluid rounded-circle w-60"></a>
-                    </div>
-                    <div class="col-6 card-title align-self-center mb-0">
-                        <h5>Emma A. Main</h5>
-                        <p class="m-0">Graphics Designer</p>
-                    </div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email : <a href="#">le maillllllllll</a></li>
-                    <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : 000 123-456</li>
-                </ul>
-                <div class="card-body">
-                    <div class="float-right btn-group btn-group-sm">
-                        <a href="#" class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
-                        <a href="#" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
-                    </div>
-                    <ul class="social-links list-inline mb-0">
-                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
-                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype"><i class="fa fa-skype"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div> -->
-    <!-- <div class="col-md-6 col-xl-3">
-            <div class="card m-b-30">
-                <div class="card-body row">
-                    <div class="col-6">
-                        <a href=""><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="img-fluid rounded-circle w-60"></a>
-                    </div>
-                    <div class="col-6 card-title align-self-center mb-0">
-                        <h5>Paul L. Goyette</h5>
-                        <p class="m-0">Graphics Designer</p>
-                    </div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email : <a href="#">le maillllllllll</a></li>
-                    <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : 000 123-456</li>
-                </ul>
-                <div class="card-body">
-                    <div class="float-right btn-group btn-group-sm">
-                        <a href="#" class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
-                        <a href="#" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
-                    </div>
-                    <ul class="social-links list-inline mb-0">
-                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
-                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype"><i class="fa fa-skype"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-xl-3">
+    @for (student of students; track student.id){
+      <div class="col-md-6 col-xl-3">
+              <div class="card m-b-30">
+                  <div class="card-body row">
+                      <div class="col-6">
+                          <a href=""><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="img-fluid rounded-circle w-60"></a>
+                      </div>
+                      <div class="col-6 card-title align-self-center mb-0">
+                          <h5>{{student.name}}</h5>
+                          <p class="m-0">Student</p>
+                      </div>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email : <a href="#">{{student.email}}</a></li>
+                      <li class="list-group-item"><i class="bi bi-calendar-heart"></i>Date de naissance : {{student.dob}}</li>
+                  </ul>
+                  <div class="card-body">
+                      <div class="float-right btn-group btn-group-sm">
+                          <button class="btn btn-primary tooltips editBtn" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </button>
+                          <button (click)="deleteS(student.id)"  class="btn btn-secondary tooltips deleteBtn" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></button>
+                      </div>
+                      <!-- <ul class="social-links list-inline mb-0">
+                          <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
+                          <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                          <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype"><i class="fa fa-skype"></i></a></li>
+                      </ul> -->
+                  </div>
+              </div>
+          </div>
+    }@empty {
+      <p>Aucune donnée disponible !</p>
+      }
+        <!-- <div class="col-md-6 col-xl-3">
             <div class="card m-b-30">
                 <div class="card-body row">
                     <div class="col-6">
@@ -88,7 +64,7 @@
                 </div>
             </div>
         </div> -->
-    @for (student of students; track student.id) {
+    <!-- @for (student of students; track student.id) {
     <div class="col-md-6 col-xl-3">
       <div class="card m-b-30">
         <div class="card-body row">
@@ -114,13 +90,18 @@
             <i class="fa fa-envelope float-right"></i>Date de naissance :
             <a href="#">{{student.dob}}</a>
           </li>
-          <button (click)="deleteS(student.id)" class="action-btn">Supprimer</button>
-          <button class="action-btn">Modifier</button>
         </ul>
+        <div class="btn_wrapper">
+          <button (click)="deleteS(student.id)" class="action-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+          </svg>Supprimer</button>
+          <button class="action-btn">Modifier</button>
+        </div>
       </div>
     </div>
+    <hr>
     }@empty {
     <p>Aucune donnée disponible !</p>
-    }
+    } -->
   </div>
 </div>
